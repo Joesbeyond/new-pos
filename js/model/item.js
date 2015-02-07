@@ -9,7 +9,7 @@ function Item(barcode, name, unit, price, brand) {
     this.brand = brand;
 }
 
-Item.allItems = function () {
+Item.loadAllItems = function () {
     return [
         new Item('ITEM000000', '可口可乐350ml', '瓶', 3.00, '可口可乐'),
         new Item('ITEM000010', '可口可乐550ml', '瓶', 4.00, '可口可乐'),
@@ -23,5 +23,31 @@ Item.allItems = function () {
         new Item('ITEM000006', '羽毛球', '个', 1.00, '')
     ];
 };
+
+Item.findItemByBarcode = function (barcode) {
+    var items = Item.loadAllItems();
+    return _.find(items, {'barcode': barcode});
+};
+
+Item.prototype.getBarcode = function () {
+    return this.barcode;
+};
+
+Item.prototype.getName = function () {
+    return this.name;
+};
+
+Item.prototype.getUnit = function () {
+    return this.unit;
+};
+
+Item.prototype.getPrice = function () {
+    return this.price;
+};
+
+Item.prototype.getBrand = function () {
+    return this.brand;
+};
+
 
 module.exports = Item;
