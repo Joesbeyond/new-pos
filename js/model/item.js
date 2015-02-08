@@ -1,6 +1,3 @@
-/**
- * Created by joes on 15-2-5.
- */
 var _ = require('lodash');
 function Item(barcode, name, unit, price, brand) {
     this.barcode = barcode;

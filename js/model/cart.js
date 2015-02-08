@@ -1,6 +1,3 @@
-/**
- * Created by joes on 15-2-7.
- */
 var _ = require('lodash');
 var Item = require('./item');
 var CartItem = require('./cart-item');

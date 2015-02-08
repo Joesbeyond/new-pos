@@ -1,6 +1,3 @@
-/**
- * Created by joes on 15-2-5.
- */
 function DiscountPromotion(type, barcodes) {
     Promotion.call(this);
 }

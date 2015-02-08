@@ -1,6 +1,3 @@
-/**
- * Created by joes on 15-2-7.
- */
 jest.dontMock('../js/model/item');
 jest.dontMock('lodash');
 describe('Item', function() {
