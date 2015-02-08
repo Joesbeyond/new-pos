@@ -11,11 +11,11 @@ function Cart() {
 Cart.prototype.getCartItems = function(inputs){
     var cartItems = this.cartItems;
     _.forEach(inputs, function (input) {
-        cartItems.push(this.getCartItem(input));
+        cartItems.push(Cart.getCartItem(input));
     });
     return cartItems;
 };
-Cart.prototype.getCartItem = function(input) {
+Cart.getCartItem = function(input) {
     var cartItem;
     for(var i in input) {
         var item = Item.findItemByBarcode(i);

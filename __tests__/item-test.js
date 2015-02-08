@@ -10,7 +10,7 @@ describe('Item', function() {
 
 
             var result = Item.findItemByBarcode('ITEM000001');
-            expect(result).toBe('雪碧');
+            expect(result.name).toBe('雪碧');
         });
     });
 });

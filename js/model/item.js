@@ -30,6 +30,4 @@ Item.findItemByBarcode = function (barcode) {
     return _.find(items, {barcode : barcode});
 };
 
-
-
 module.exports = Item;
