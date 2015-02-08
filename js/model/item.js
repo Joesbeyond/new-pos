@@ -1,6 +1,7 @@
 /**
  * Created by joes on 15-2-5.
  */
+var _ = require('lodash');
 function Item(barcode, name, unit, price, brand) {
     this.barcode = barcode;
     this.name = name;
@@ -26,28 +27,9 @@ Item.loadAllItems = function () {
 
 Item.findItemByBarcode = function (barcode) {
     var items = Item.loadAllItems();
-    return _.find(items, {'barcode': barcode});
+    return _.find(items, {barcode : barcode});
 };
 
-Item.prototype.getBarcode = function () {
-    return this.barcode;
-};
-
-Item.prototype.getName = function () {
-    return this.name;
-};
-
-Item.prototype.getUnit = function () {
-    return this.unit;
-};
-
-Item.prototype.getPrice = function () {
-    return this.price;
-};
-
-Item.prototype.getBrand = function () {
-    return this.brand;
-};
 
 
 module.exports = Item;
