@@ -21,4 +21,17 @@ Cart.getCartItem = function(input) {
     return cartItem;
 };
 
+Cart.prototype.getCartItemsText = function() {
+    var cartItemsText = '';
+
+    _.forEach(this.cartItems, function(cartItem) {
+        cartItemsText += cartItem.toInventoryText();
+    });
+
+    return cartItemsText;
+};
+
+Cart.prototype.getPaid = function() {
+
+}
 module.exports = Cart;

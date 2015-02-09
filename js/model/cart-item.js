@@ -5,8 +5,8 @@ function CartItem(item, count) {
 }
 
 CartItem.prototype.getSubtotal = function() {
-    return 110;
-   // return this.item.price * (this.count - this.getPromotionCount());
+
+    return this.item.price * this.count;
 };
 CartItem.prototype.toInventoryText = function() {
     return  '名称：' + this.item.name +
@@ -15,5 +15,7 @@ CartItem.prototype.toInventoryText = function() {
             '(元)，小计：'+ this.getSubtotal().toFixed(2) + '(元)\n'
 };
 
-
+CartItem.prototype.calculateTotal = function () {
+    return this.item.price * this.count;
+};
 module.exports = CartItem;

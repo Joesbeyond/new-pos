@@ -1,9 +1,14 @@
-/**
- * Created by joes on 15-2-5.
- */
-function Promotion(type, barcodes) {
-    this.type = type;
-    this.barcodes = barcodes || [];
+function Promotion () {
+
 }
+
+Promotion.prototype.getPromotionString = function(cartItems) {
+    var promotionMoney = this.getPromotionMoney(cartItems);
+    return '名称：' + this.buildPromotionName(cartItems) + '，金额：' + promotionMoney.toFixed(2) + '元\n';
+};
+
+Promotion.prototype.buildPromotionName = function() {
+    return this.name;
+};
 
 module.exports = Promotion;
