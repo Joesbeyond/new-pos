@@ -1,5 +1,19 @@
+var _ = require("lodash");
 function CartItem(item, count) {
     this.item = item;
     this.count = count || 0;
 }
+
+CartItem.prototype.getSubtotal = function() {
+    return 110;
+   // return this.item.price * (this.count - this.getPromotionCount());
+};
+CartItem.prototype.toInventoryText = function() {
+    return  '名称：' + this.item.name +
+            '，数量：' + this.count + this.item.unit +
+            '，单价：' + this.item.price.toFixed(2) +
+            '(元)，小计：'+ this.getSubtotal().toFixed(2) + '(元)\n'
+};
+
+
 module.exports = CartItem;
