@@ -28,7 +28,7 @@ describe('BrandDiscount', function() {
     });
 
     describe('getPromotionString', function() {
-        it('should return correct promotion money', function() {
+        it('should return correct promotion string', function() {
 
             var BrandDiscount = require('../js/model/promotion/brand-discount');
             var Item = require('../js/model/item');
@@ -44,8 +44,8 @@ describe('BrandDiscount', function() {
                 new CartItem(item3, 20)
             ];
             var brandDiscount = new BrandDiscount('可口可乐品牌打折', 0.90, '可口可乐');
-            var promotionMoney = brandDiscount.getPromotionMoney(cartItem);
-            expect(promotionMoney).toBe(18);
+            var promotionString = brandDiscount.getPromotionString(cartItem);
+            expect(promotionString).toBe('名称：可口可乐品牌打折，金额：18.00元\n');
         });
     });
 });
