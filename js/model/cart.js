@@ -12,6 +12,7 @@ Cart.prototype.getCartItems = function(inputs){
     });
     return cartItems;
 };
+
 Cart.getCartItem = function(input) {
     var cartItem;
     for(var i in input) {
@@ -31,7 +32,10 @@ Cart.prototype.getCartItemsText = function() {
     return cartItemsText;
 };
 
-Cart.prototype.getPaid = function() {
+Cart.prototype.getPaid = function(promotion) {
 
-}
+
+        return this.getTotalPrices() - promotion.getPromotionTotalPrice();
+
+};
 module.exports = Cart;
