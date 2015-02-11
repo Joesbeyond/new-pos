@@ -1,7 +1,7 @@
 /**
  * Created by joes on 15-2-9.
  */
-
+var moment = require('moment');
 function Printer() {
 
 }
@@ -9,7 +9,7 @@ function Printer() {
 Printer.prototype.toString = function(cart) {
 
     inventoryText = '***<没钱赚商店>购物清单***\n' +
-   // '打印时间：' + moment + '\n' +
+    '打印时间：' + 'moment' + '\n' +
     '----------------------\n' +
     cart.getCartItemsText() +
     '----------------------\n' +
