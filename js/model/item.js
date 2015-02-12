@@ -22,9 +22,13 @@ Item.loadAllItems = function () {
     ];
 };
 
-Item.findItemByBarcode = function (barcode) {
+Item.findItemByBarcode = function(barcode) {
     var items = Item.loadAllItems();
     return _.find(items, {barcode : barcode});
+};
+
+Item.prototype.getBarcode = function() {
+    return this.barcode;
 };
 
 module.exports = Item;
