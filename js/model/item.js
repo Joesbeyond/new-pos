@@ -27,8 +27,22 @@ Item.findItemByBarcode = function(barcode) {
     return _.find(items, {barcode : barcode});
 };
 
-Item.prototype.getBarcode = function() {
-    return this.barcode;
+Item.prototype = {
+    getBarcode: function() {
+        return this.barcode;
+    },
+    getName: function() {
+        return this.name;
+    },
+    getUnit: function() {
+        return this.unit;
+    },
+    getPrice: function() {
+        return this.price;
+    },
+    getBrand: function() {
+        return this.brand;
+    }
 };
 
 module.exports = Item;

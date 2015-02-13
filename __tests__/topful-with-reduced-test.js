@@ -13,10 +13,10 @@ describe('FullWithReduced', function() {
             var CartItem = require('../js/model/cart-item');
             var FullWithReduced =require('../js/model/promotion/full-with-reduced');
             var item = new Item('ITEM000002', '云山苹果', '斤', 5.50, '云山');
-            var item2 = new Item('ITEM000001', '可口可乐550ml', '瓶', 4.00, '可口可乐');
+
             var cartItems = [
-                new CartItem(item, 30),
-                new CartItem(item2, 20)
+                new CartItem(item, 30)
+
             ];
             var fullWithReduced = new FullWithReduced('满100减3', 3, 100, ['ITEM000003']);
             var reducedMoney = fullWithReduced.getPromotionMoney(cartItems);

@@ -22,7 +22,7 @@ FullWithReduced.prototype.getPromotionMoney = function(cartItems) {
             promotionMoney += cartItem.calculateTotal();
         }
     });
-    return promotionMoney >= self.topful ? self.reduced : 2
+    return promotionMoney >= self.topful ? self.reduced : 0;
 };
 
 module.exports = FullWithReduced;
