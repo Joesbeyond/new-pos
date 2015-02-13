@@ -6,9 +6,9 @@ var Discount = require('./discount');
 var Promotion = require('./promotion');
 var CartItem = require('../cart-item');
 
-function BrandDiscount(name, discount, brand) {
+function BrandDiscount(name, discount, brands) {
     Discount.call(this, name, discount);
-    this.brand = brand;
+    this.brands = brands || [];
 }
 
 BrandDiscount.prototype = Object.create(Discount.prototype);
@@ -17,7 +17,7 @@ BrandDiscount.prototype.getPromotionMoney = function (cartItems) {
 var promotionMoney = 0.00;
 var self = this;
 _.forEach(cartItems, function(cartItem) {
-    if (cartItem.item.brand === self.brand) {
+    if (_.contains(self.brands, cartItem.item.getBrand())) {
         promotionMoney += cartItem.calculateTotal();
     }
 });
