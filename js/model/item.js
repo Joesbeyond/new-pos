@@ -34,12 +34,15 @@ Item.prototype = {
     getName: function() {
         return this.name;
     },
+
     getUnit: function() {
         return this.unit;
     },
+
     getPrice: function() {
         return this.price;
     },
+
     getBrand: function() {
         return this.brand;
     }
