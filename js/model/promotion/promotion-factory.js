@@ -13,10 +13,13 @@ var PromotionFactory = {
                 promotionType = new BrandDiscount('可口可乐品牌打折', 0.9, brands);
                 break;
             case 'full':
-                promotionType = new FullWith0Reduced();
+                promotionType = new FullWithReduced();
                 break;
         }
         return promotionType;
+    },
+    promotionChecker:function() {
+        
     }
 }
 
