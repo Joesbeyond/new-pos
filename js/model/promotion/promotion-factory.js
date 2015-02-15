@@ -5,22 +5,19 @@ var PromotionFactory = {
         var promotionType;
         var brands = [
             '可口可乐',
-            '云山',
-            '康师傅'
+           // '云山',
+           // '康师傅'
         ];
         switch (type) {
             case 'brand':
                 promotionType = new BrandDiscount('可口可乐品牌打折', 0.9, brands);
-                break;
+
             case 'full':
-                promotionType = new FullWithReduced();
-                break;
+                promotionType = new FullWithReduced('满100减3', 3, 100, ['ITEM000003']);
+
         }
         return promotionType;
-    },
-    promotionChecker:function() {
-        
     }
-}
+};
 
 module.exports = PromotionFactory;

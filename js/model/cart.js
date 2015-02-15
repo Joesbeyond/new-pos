@@ -1,6 +1,7 @@
 var _ = require('lodash');
 var Item = require('./item');
 var CartItem = require('./cart-item');
+var Promotion  = require('./promotion/promotion');
 function Cart() {
     this.cartItems = [];
 };
@@ -31,6 +32,19 @@ Cart.prototype.getCartItemsText = function() {
 
     return cartItemsText;
 };
+
+Cart.prototype.getPromotionText = function(cartItems) {
+    var promotionText = '';
+    var promotion = new Promotion();
+    _.forEach(this.cartItems, function(cartItem) {
+        //promotionText += cartItem.toInventoryText();
+        promotionText += promotion.getPromotionString(cartItem);
+    });
+
+    return promotionText;
+};
+
+
 
 Cart.prototype.getPaid = function(promotion) {
 

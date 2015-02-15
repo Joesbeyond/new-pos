@@ -5,7 +5,6 @@ var _ = require('lodash');
 var Discount = require('./discount');
 var Promotion = require('./promotion');
 var CartItem = require('../cart-item');
-
 function BrandDiscount(name, discount, brands) {
     Discount.call(this, name, discount);
     this.brands = brands || [];
@@ -19,6 +18,7 @@ var self = this;
 _.forEach(cartItems, function(cartItem) {
     if (_.contains(self.brands, cartItem.item.getBrand())) {
         promotionMoney += cartItem.calculateTotal();
+
     }
 });
     return promotionMoney - (promotionMoney * self.discount);

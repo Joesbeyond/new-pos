@@ -20,4 +20,5 @@ CartItem.prototype.toInventoryText = function() {
 CartItem.prototype.calculateTotal = function () {
     return this.item.getPrice() * this.count;
 };
+
 module.exports = CartItem;
