@@ -1,15 +1,17 @@
+var Interface = require('./interface');
+var interface = new Interface('Promotion', ['getPromotionString','getPromotionMoney']);
 
-function Promotion () {
+function Promotion() {
 
 }
 
-Promotion.prototype.getPromotionString = function(cartItems) {
-    var promotionMoney = this.getPromotionMoney(cartItems);
-    return '名称：' + this.buildPromotionName(cartItems) + '，金额：' + promotionMoney.toFixed(2) + '元\n';
-};
+Promotion.prototype.getPromotionString = function() {
 
-Promotion.prototype.buildPromotionName = function() {
-    return this.name;
-};
+}
+
+Promotion.prototype.getPromotionMoney = function() {
+
+}
+
 
 module.exports = Promotion;

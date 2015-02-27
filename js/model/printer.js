@@ -9,12 +9,12 @@ function Printer(promotionInfo) {
 Printer.prototype.toString = function(cart) {
 
     inventoryText = '***<没钱赚商店>购物清单***\n' +
-    '打印时间：' + moment().format() + '\n\n' +
+    '打印时间：' + moment().format('YYYY年MM月DD日 HH:mm:ss') + '\n\n' +
     '----------------------\n' +
     cart.getCartItemsText() +
     '\n----------------------\n' +
     '优惠信息：\n' +
-    this.promotionInfo +
+  //  this.promotionInfo +
     '----------------------\n' +
   //  '总计：' + cart.getPaid().toFixed(2) + '(元)\n' +
    // '节省：' + cart.getPromotionTotalPrice().toFixed(2) + '(元)\n' +

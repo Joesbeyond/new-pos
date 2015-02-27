@@ -1,3 +1,4 @@
+/*
 jest.dontMock('lodash');
 jest.dontMock('../js/model/promotion/promotion');
 jest.dontMock('../js/model/promotion/discount');
@@ -49,3 +50,4 @@ describe('BrandDiscount', function() {
         });
     });
 });
+*/
