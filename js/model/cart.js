@@ -25,11 +25,9 @@ Cart.getCartItem = function(input) {
 
 Cart.prototype.getCartItemsText = function() {
     var cartItemsText = '';
-
     _.forEach(this.cartItems, function(cartItem) {
         cartItemsText += cartItem.toInventoryText();
     });
-
     return cartItemsText;
 };
 
@@ -37,14 +35,10 @@ Cart.prototype.getPromotionText = function(cartItems) {
     var promotionText = '';
     var promotion = new Promotion();
     _.forEach(this.cartItems, function(cartItem) {
-        //promotionText += cartItem.toInventoryText();
         promotionText += promotion.getPromotionString(cartItem);
     });
-
     return promotionText;
 };
-
-
 
 Cart.prototype.getPaid = function(promotion) {
 
