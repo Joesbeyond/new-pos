@@ -1,6 +1,4 @@
-/**
- * Created by joes on 15-2-9.
- */
+
 var _ = require('lodash');
 var Discount = require('./discount');
 var Promotion = require('./promotion');
@@ -12,12 +10,16 @@ function BrandDiscount(name, discount, brands) {
 
 BrandDiscount.prototype = Object.create(Discount.prototype);
 BrandDiscount.prototype.constructor = BrandDiscount;
+BrandDiscount.prototype.buildPromotionName = function() {
+    return this.name + '品牌打折';
+};
+
 BrandDiscount.prototype.getPromotionMoney = function (cartItems) {
-var promotionMoney = 0.00;
-var self = this;
-_.forEach(cartItems, function(cartItem) {
+    var promotionMoney = 0.00;
+    var self = this;
+    _.forEach(cartItems, function(cartItem) {
     if (_.contains(self.brands, cartItem.item.getBrand())) {
-        promotionMoney += cartItem.calculateTotal();
+        promotionMoney += cartItem.getSubtotal();
 
     }
 });

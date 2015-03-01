@@ -14,10 +14,10 @@ CartItem.prototype.toInventoryText = function() {
     return  '名称：' + item.getName() +
             '，数量：' + this.count + this.item.getUnit() +
             '，单价：' + this.item.getPrice().toFixed(2) +
-            '(元)，小计：'+ this.calculateTotal().toFixed(2) + '(元)\n'
+            '(元)，小计：'+ this.getSubtotal().toFixed(2) + '(元)\n'
 };
 
-CartItem.prototype.calculateTotal = function () {
+CartItem.prototype.getSubtotal = function () {
     return this.item.getPrice() * this.count;
 };
 

@@ -2,20 +2,19 @@
  * Created by joes on 15-2-9.
  */
 var moment = require('moment');
-function Printer(promotionInfo) {
-    this.promotionInfo = promotionInfo;
+function Printer() {
 }
 
-Printer.prototype.toString = function(cart) {
+Printer.prototype.toString = function(cart, strategy, cartItems) {
 
     inventoryText = '***<没钱赚商店>购物清单***\n' +
-    '打印时间：' + moment().format() + '\n\n' +
+    '打印时间：' + moment().format('YYYY年MM月DD日 HH:mm:ss') + '\n\n' +
     '----------------------\n' +
     cart.getCartItemsText() +
     '\n----------------------\n' +
     '优惠信息：\n' +
-    this.promotionInfo +
-    '----------------------\n' +
+    strategy.getPromotionInfo(cartItems) +
+    '----------------------\n\n' +
   //  '总计：' + cart.getPaid().toFixed(2) + '(元)\n' +
    // '节省：' + cart.getPromotionTotalPrice().toFixed(2) + '(元)\n' +
     '**********************';
