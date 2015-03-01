@@ -16,21 +16,14 @@ var input = [
     { 'ITEM000003' : 12 }
 ];
 
-
+printInventory(input);
 function printInventory(input) {
 
     var cart = new Cart();
     var cartItems = cart.getCartItems(input);
     var strategy = StrategyFactory.createStrategy('strategy1');
-    var printer0 = new Printer();
-    console.log(printer0.toString(cart, strategy, cartItems));
-
-
-   /* StrategyFactory.createStrategy('strategy1');
-    var fullDiscount = PromotionFactory.createPromotion('full');
-    var full = fullDiscount.getPromotionString(cartItems);
-    var printer = new Printer(full);
-    console.log(printer.toString(cart));*/
+    var printer = new Printer();
+    var inventory = printer.toString(cart, strategy);
+    console.log(inventory);
 
 }
-printInventory(input);

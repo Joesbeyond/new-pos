@@ -8,12 +8,17 @@ var PromotionFactory = {
            // '云山',
            // '康师傅'
         ];
+        var fullArray = [
+            'ITEM000010',
+            'ITEM000000',
+            'ITEM000005'
+        ];
         switch (type) {
             case 'brand':
                 promotionType = new BrandDiscount('可口可乐', 0.9, brands);
                 break;
             case 'full':
-                promotionType = new FullWithReduced('满', 3, 100, ['ITEM000003']);
+                promotionType = new FullWithReduced('满', 3, 100, fullArray);
                 break;
         }
         return promotionType;

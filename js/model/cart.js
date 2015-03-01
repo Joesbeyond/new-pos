@@ -31,10 +31,26 @@ Cart.prototype.getCartItemsText = function() {
     return cartItemsText;
 };
 
-Cart.prototype.getPaid = function(promotion) {
-
-
-        return this.getTotalPrices() - promotion.getPromotionTotalPrice();
-
+Cart.prototype.getPromotionText = function(strategy) {
+    return strategy.getPromotionInfo(this.cartItems);
 };
+
+Cart.prototype.getPaidMoney = function(strategy) {
+    return (this.getAllSubtotal() - this.getSavedMoney());
+};
+
+Cart.prototype.getSavedMoney = function(strategy) {
+    return strategy.savedMoney;
+};
+
+Cart.prototype.getAllSubtotal = function() {
+    var totalMoney = 0;
+    _.forEach(this.cartItems, function(cartItem) {
+        var count = cartItem.count;
+        var price = cartItem.item.getPrice();
+        totalMoney += count * price;
+    });
+    return totalMoney;
+};
+
 module.exports = Cart;
