@@ -1,5 +1,5 @@
-var Interface = require('./interface');
-var Promotion = require('./promotion');
+//var Interface = require('./interface');
+//var Promotion = require('./promotion');
 var PromotionDecorator = function() {
 
 };

@@ -1,7 +1,6 @@
 var PromotionFactory = require('../promotion/promotion-factory');
 var _ = require('lodash');
-function Strategy_1(cartItems) {
-    this.cartItems = cartItems;
+function Strategy_1() {
     this.savedMoney = 0;
 }
 
@@ -9,11 +8,8 @@ Strategy_1.prototype.getPromotionInfo = function(cartItems) {
     //var promotionsString = '';
    // promotionsString += this.isBrandDiscount();
    // promotionsString += this.isFullWithReduced();
-    console.log('0000');
     this.isBrandDiscount(cartItems);
-    console.log('0001');
-    this.getString(cartItems);
-    console.log('0002');
+    //this.getString(cartItems);
    // return promotionsString;
 }
 
@@ -30,10 +26,9 @@ Strategy_1.prototype.isBrandDiscount = function(cartItems) {
     return promotionMoney - (promotionMoney * 0.9);
 
 }
-Strategy_1.prototype.getString = function() {
+Strategy_1.prototype.getString = function(cartItems) {
     var proString = PromotionFactory.createPromotion('brand');
-    console.log(proString);
-    proString.getPromotionString(this.cartItems);
+    proString.getPromotionString(cartItems);
 
 }
 
