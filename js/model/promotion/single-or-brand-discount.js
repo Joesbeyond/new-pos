@@ -12,6 +12,9 @@ function SingleOrBrandDiscount(name, discount, brands, barcodes) {
 
 SingleOrBrandDiscount.prototype = Object.create(Discount.prototype);
 SingleOrBrandDiscount.prototype.constructor = SingleOrBrandDiscount;
+SingleOrBrandDiscount.prototype.buildPromotionName = function() {
+    return this.name + '单品打折';
+};
 SingleOrBrandDiscount.prototype.getPromotionMoney = function(cartItems) {
     var promotionMoney = 0.00;
     var self = this;

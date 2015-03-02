@@ -14,7 +14,7 @@ function FullWithReduced(name, reduced, topful, barcodes){
 FullWithReduced.prototype = Object.create(Reduced.prototype);
 FullWithReduced.prototype.constructor = FullWithReduced;
 FullWithReduced.prototype.buildPromotionName = function() {
-    return this.name + this.topful + '减' + this.reduced;
+    return this.name + '满' + this.topful + '减' + this.reduced;
 };
 
 FullWithReduced.prototype.getPromotionMoney = function(cartItems) {

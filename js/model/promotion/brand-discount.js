@@ -1,7 +1,6 @@
 
 var _ = require('lodash');
 var Discount = require('./discount');
-var Promotion = require('./promotion');
 var CartItem = require('../cart-item');
 function BrandDiscount(name, discount, brands) {
     Discount.call(this, name, discount);
@@ -14,7 +13,7 @@ BrandDiscount.prototype.buildPromotionName = function() {
     return this.name + '品牌打折';
 };
 
-BrandDiscount.prototype.getPromotionMoney = function (cartItems) {
+BrandDiscount.prototype.getPromotionMoney = function(cartItems) {
     var promotionMoney = 0.00;
     var self = this;
     _.forEach(cartItems, function(cartItem) {
