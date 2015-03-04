@@ -6,7 +6,7 @@ function BrandReduced(name, reduced, topful, brand){
 
     Reduced.call(this, name, reduced, topful);
     this.brand = brand || [];
-};
+}
 
 BrandReduced.prototype = Object.create(Reduced.prototype);
 BrandReduced.prototype.constructor = BrandReduced;
@@ -22,7 +22,7 @@ BrandReduced.prototype.getPromotionMoney = function(cartItems) {
             promotionMoney += cartItem.getSubtotal();
         }
     });
-    var reducedMoney = Math.floor(self.reduced * promotionMoney/self.topful);
+    var reducedMoney = self.reduced * parseInt(promotionMoney/self.topful);
     return promotionMoney >= self.topful ? reducedMoney : 0;
 };
 

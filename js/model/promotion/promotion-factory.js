@@ -6,6 +6,7 @@ var BrandReduced = require('./brand-reduced');
 var SingleReduced = require('./single-reduced');
 var SingleAndBrandDiscount = require('./single-and-brand-discount');
 var WholeReduced = require('./whole-reduced');
+var WholeDiscount = require('./whole-discount');
 var PromotionFactory = {
     createPromotion: function(type) {
         var promotion;
@@ -33,10 +34,12 @@ var PromotionFactory = {
                 promotion = new BrandDiscountDecorator('可口可乐', 0.90, ['可口可乐'], ['ITEM000000']);
                 break;
             case 'brand-reduced':
-                promotion = new BrandReduced('康师傅', 2, 100, '康师傅');
+               // promotion = new BrandReduced('康师傅', 2, 100, '康师傅');
+                promotion = new BrandReduced('云山', 2, 100, '云山');
                 break;
             case 'single-reduced':
-                promotion = new SingleReduced('云山荔枝', 5, 100, 'ITEM000003');
+               // promotion = new SingleReduced('云山荔枝', 5, 100, 'ITEM000003');
+                promotion = new SingleReduced('果粒橙', 5, 100, 'ITEM000007');
                 break;
             case 'single-and-brand':
                 promotion = new SingleAndBrandDiscount('可口可乐', 0.90, ['可口可乐'], ['ITEM000000'], 0.95);
@@ -50,6 +53,9 @@ var PromotionFactory = {
         switch (type) {
             case 'whole-reduced':
                 promotion = new WholeReduced('', 5, 100, 'ITEM000002', savedMoney);
+                break;
+            case 'whole-discount':
+                promotion = new WholeDiscount('', 0.90, 'ITEM000001', savedMoney);
                 break;
         }
         return promotion;

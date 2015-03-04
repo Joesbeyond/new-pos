@@ -22,7 +22,8 @@ var input = [
         { 'ITEM000001' : 30 },
         { 'ITEM000007' : 40 },
         { 'ITEM000003' : 8  },
-        { 'ITEM000002' : 14 }
+        { 'ITEM000002' : 14 },
+
 
 ];
 
@@ -31,7 +32,7 @@ function printInventory(input) {
 
     var cart = new Cart();
     var cartItems = cart.getCartItems(input);
-    var strategy = StrategyFactory.createStrategy('strategy3');
+    var strategy = StrategyFactory.createStrategy('strategy4');
     var printer = new Printer();
     var inventory = printer.toString(cart, strategy);
     console.log(inventory);
