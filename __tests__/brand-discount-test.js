@@ -46,7 +46,11 @@ describe('BrandDiscount', function() {
                 new CartItem(item3, 20)
                 ];
             var brandDiscount = new BrandDiscount('可口可乐', 0.90, ['可口可乐']);
+<<<<<<< HEAD
             var promotionMoney = brandDiscount.getPromotionMoney(cartItems);
+=======
+            var promotionMoney = brandDiscount.getPromotionMoney(cartItem);
+>>>>>>> new_branch_name
             expect(promotionMoney).toBe(18);
         });
     });*/

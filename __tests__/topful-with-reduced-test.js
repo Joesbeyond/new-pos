@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 /*
 'use strict';
+=======
+>>>>>>> new_branch_name
 jest.dontMock('lodash');
 jest.dontMock('../js/model/promotion/promotion');
 jest.dontMock('../js/model/promotion/reduced');
