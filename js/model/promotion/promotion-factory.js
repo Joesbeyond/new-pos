@@ -4,9 +4,11 @@ var SingleOrBrandDiscount = require('./single-or-brand-discount');
 var BrandDiscountDecorator = require('./brand-discount-decorator');
 var BrandReduced = require('./brand-reduced');
 var SingleReduced = require('./single-reduced');
+var SingleAndBrandDiscount = require('./single-and-brand-discount');
+var WholeReduced = require('./whole-reduced');
 var PromotionFactory = {
     createPromotion: function(type) {
-        var promotionType;
+        var promotion;
         var brands = [
             '可口可乐'
            // '云山',
@@ -19,24 +21,38 @@ var PromotionFactory = {
         ];
         switch (type) {
             case 'brand':
-                promotionType = new BrandDiscount('可口可乐', 0.9, brands);
+                promotion = new BrandDiscount('可口可乐', 0.9, brands);
                 break;
             case 'full':
-                promotionType = new FullWithReduced('云山荔枝', 3, 100, fullArray);
+                promotion = new FullWithReduced('', 3, 100, fullArray);
                 break;
-            case 'single-brand':
-                promotionType = new SingleOrBrandDiscount('可口可乐350ml', 0.95, ['可口可乐'], ['ITEM000000']);
+            case 'single-or-brand':
+                promotion = new SingleOrBrandDiscount('可口可乐350ml', 0.95, ['可口可乐'], ['ITEM000000']);
                 break;
             case 'brand-discount':
-                promotionType = new BrandDiscountDecorator('可口可乐', 0.90, ['可口可乐'], ['ITEM000000']);
+                promotion = new BrandDiscountDecorator('可口可乐', 0.90, ['可口可乐'], ['ITEM000000']);
                 break;
             case 'brand-reduced':
-                promotionType = new BrandReduced('康师傅', 2, 100, '康师傅');
+                promotion = new BrandReduced('康师傅', 2, 100, '康师傅');
                 break;
             case 'single-reduced':
-                promotionType = new SingleReduced('云山荔枝', 5, 100, 'ITEM000003');
+                promotion = new SingleReduced('云山荔枝', 5, 100, 'ITEM000003');
+                break;
+            case 'single-and-brand':
+                promotion = new SingleAndBrandDiscount('可口可乐', 0.90, ['可口可乐'], ['ITEM000000'], 0.95);
+                break;
+
         }
-        return promotionType;
+        return promotion;
+    },
+    createPromotion2: function(type, savedMoney) {
+        var promotion;
+        switch (type) {
+            case 'whole-reduced':
+                promotion = new WholeReduced('', 5, 100, 'ITEM000002', savedMoney);
+                break;
+        }
+        return promotion;
     }
 };
 

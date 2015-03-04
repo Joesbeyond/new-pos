@@ -8,7 +8,7 @@ var _ = require('lodash');
 function SingleReduced(name, reduced, topful, barcode){
 
     Reduced.call(this, name, reduced, topful);
-    this.barcodes = barcode;
+    this.barcode = barcode;
 };
 
 SingleReduced.prototype = Object.create(Reduced.prototype);
