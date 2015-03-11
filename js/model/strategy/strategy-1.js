@@ -27,6 +27,7 @@ Strategy_1.prototype.isBrandDiscount = function(cartItems) {
     return promotionMoney - (promotionMoney * 0.9);
 
 }
+
 Strategy_1.prototype.getString = function(cartItems) {
     var proString = PromotionFactory.createPromotion('brand');
     proString.getPromotionString(cartItems);
